@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Registration Page</title>
+
+</h:head>
+<h:body>
+
+
+<div class="well well-sm" style="width:350px;float:center ">
+
+<h:form>
+<h1>Registration Form</h1>
+<table style=" opacity:0.93; width:100px;height:100px; " class="table table-bordered">
+	<tr>
+		<td>name</td>
+		<td><h:inputText id="name" value="#{userBean.name}" required="true"/>
+		<h:message for="name"></h:message></td>
+	</tr>
+	<tr>
+		<td>contact</td>
+		<td><h:inputText id="contact" value="#{userBean.contact}" required="true"/>
+		<h:message for="contact"></h:message></td>
+	</tr>
+	<tr>
+		<td>email</td>
+		<td><h:inputText id="email" value="#{userBean.email}" required="true"/>
+		<h:message for="email"></h:message></td>
+	</tr>
+	
+	<tr>
+		<td>Designation</td>
+		<td><h:selectOneMenu value="#{userBean.designation}">
+		<f:selectItem itemValue="1" itemLabel="Manager" /><!-- manager -->
+		<f:selectItem itemValue="2" itemLabel="Trainer" /><!-- trainer -->
+		<f:selectItem itemValue="3" itemLabel="Trainee" /><!-- trainee -->
+</h:selectOneMenu></td>
+	</tr>
+	<tr>
+		<td>user name</td>
+		<td><h:inputText id="username" value="#{userBean.userName}" required="true"/>
+		<h:message for="usernames" ></h:message></td>
+	</tr>
+	<tr>
+		<td>password</td>
+		<td><h:inputText id="password" value="#{userBean.password}" required="true"/>
+		<h:message for="password"></h:message></td>
+	</tr>
+	<tr >
+		<td colspan='2'><h:commandButton class="btn btn-info " value="Register" action="#{userBean.registrationAction}"/></td>
+	</tr>
+</table>
+</h:form>
+</div>
+</h:body>
+</html>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Training Management System</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>body{ 
+background-image:url("http://www.studytonight.com/css/resource.v2/pictures/st_code_back.jpg") }</style>
+<style>
+	#background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url("http://www.studytonight.com/css/resource.v2/pictures/st_code_back.jpg") no-repeat;
+    background-size: cover;
+}
+
+
+
+/*
+ * Specific styles of signin component
+ */
+/*
+ * General styles
+ */
+body, html {
+    height: 100%;
+    
+}
+
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: rgb(104, 145, 162);
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+}
+
+.navbar-nav > li > a {
+    color: #ffffff;
+	line-height: 34px;
+    font-weight: bold;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+a {
+    color: #10a2ff;
+    text-decoration: none;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background: #7f8c8d;
+}
+a.ex5:hover, a.ex5:active {text-decoration: none;}
+.navbar.transparent .navbar-inner {
+       background:transparent;
+       color: black;
+    }
+    .navbar.transparent .navbar-inner li a {
+        color: black;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 18px;
+      <!--  letter-spacing: 3pt;-->
+    }
+    .navbar.transparent .nav > li > a:focus,
+    .navbar.transparent .nav > li > a:hover {
+      color: #666666;
+      text-decoration: none;
+      background-color: transparent;
+    }
+    .button.navbar-toggle.collapsed:focus,
+    .button.navbar-toggle.collapsed:hover {
+      color: #666666;
+    }
+    .navbar.transparent .navbar-brand:hover, 
+     .navbar.transparent .navbar-brand:focus {
+      background-color: transparent;
+      color: black;
+    }
+    .navbar.transparent .navbar-brand{
+      background-color: transparent;
+      color: black;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+      font-size: 16pt;
+      letter-spacing: 1pt;
+    }
+	</style>
+</h:head>
+
+<h:body>
+ <div class="navbar transparent navbar-fixed-top" role="navigation">
+ 
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle"  data-toggle="collapse" data-target="#example-nav-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+			<img id="brand-icon" src="http://www.yash.com/images/partners-logo/YASH-slogan.png" alt="http://www.yash.com/india/yash-enterprise-services-solutions-for-india.php" title="Yash Tech"/>
+		</a></div>
+    <div class="collapse navbar-collapse" id="example-nav-collapse">
+            <ul class="nav navbar-nav">
+			<li><a  href="/library/">Tutorials</a></li>
+			<li><a  href="/online-courses/">Video Playlists</a></li>
+			<li><a  href="/studyroom/">Q &amp; A Forum</a></li>
+			<li><a  href="/tests/">Tests</a></li>
+			<li><a  href="/code/">Course</a></li>
+		</ul>
+		<ul class="nav navbar-nav pull-right">
+		<li><a href="/login?url=/">Login</a></li>
+		
+		</ul>
+		<div class="navbar-form navbar-right">
+		<a class="btn btn-warning" data-toggle="modal" data-target="#myModal"><b>Sign up</b></a>
+		<!--<a class="btn btn-warning" href="/register"><b>Signup</b></a>-->
+		</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <video autoplay="autoplay" loop="looped" muted="mute" poster="http://www.studytonight.com/css/resource.v2/pictures/st_code_back.jpg" id="background">
+    <source src="http://www.studytonight.com/css/resource.v2/videos/st_code_back.webm" type="video/webm"/>
+</video>
+
+
+    <div class="container" style="padding-top:90px;">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="http://www.northeastern.edu/cesar/wp-content/uploads/2015/07/temporary-profile-placeholder.jpg" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <h:outputText value="#{param['err']}" style="color:red"/>
+            
+            <h:form class="form-signin">
+            	
+            	  <label for="username">Username</label>
+                <h:inputText type="email" id="username"  value="#{userBean.userName}" requiredMessage="Kindly provide username" class="form-control"   required="true" />
+                  <label for="password">Password</label>
+                <h:inputSecret type="password" id="password" value="#{userBean.password}" requiredMessage="Kindly provide password" class="form-control" required="true"/>
+                <p id="msg">
+       <h:message for="password" style="color:red"></h:message></p>
+                <div id="remember" class="checkbox">
+                    <label>
+                   
+                    
+                        <h:selectBooleanCheckbox type="checkbox" value="remember-me">remember me</h:selectBooleanCheckbox> 
+                    </label>
+                </div>
+                <h:commandButton class="btn btn-lg btn-primary btn-block btn-signin" value="Login" action="#{userBean.LoginAction}"></h:commandButton>
+           
+            <a href="#" class="forgot-password">
+                Forgot the password?
+            </a>
+             </h:form><!-- /form -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+	
+	<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">SignUp Now</h4>
+        </div>
+        <div class="modal-body">
+         <h:form >
+
+<table style=" opacity:0.93; width:100px;height:100px; " >
+	<tr>
+		<td>Name</td>
+		<td><h:inputText id="name" value="#{userBean.name}" required="true"  class="input-xlarge"/>
+		<h:message for="name"></h:message></td>
+	</tr>
+	<tr>
+		<td>Contact</td>
+		<td><h:inputText id="contact" value="#{userBean.contact}" required="true"/>
+		<h:message for="contact"></h:message></td>
+	</tr>
+	<tr>
+		<td>E-mail</td>
+		<td><h:inputText id="email" value="#{userBean.email}" required="true"/>
+		<h:message for="email"></h:message></td>
+	</tr>
+	
+	<tr>
+		<td>Designation</td>
+		<td><h:selectOneMenu value="#{userBean.designation}">
+		<f:selectItem itemValue="1" itemLabel="Manager" /><!-- manager -->
+		<f:selectItem itemValue="2" itemLabel="Trainer" /><!-- trainer -->
+		<f:selectItem itemValue="3" itemLabel="Trainee" /><!-- trainee -->
+</h:selectOneMenu></td>
+	</tr>
+	<tr>
+		<td>User Name</td>
+		<td><h:inputText id="username" value="#{userBean.userName}" required="true"/>
+		<h:message for="usernames" ></h:message></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><h:inputText id="password" value="#{userBean.password}" required="true"/>
+		<h:message for="password"></h:message></td>
+	</tr>
+	<tr >
+		<td colspan='2'><h:commandButton class="btn btn-info " value="Register" action="#{userBean.registrationAction}"/></td>
+	</tr>
+</table>
+</h:form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+</h:body>
+  <footer  class="footer navbar-fixed-bottom" style="text-align:center;">
+        <p style="color:white;">© Yash Technoloogies 2015</p>
+      </footer>
+</html>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link
+		href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+		rel="stylesheet"></link>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+	<script src="javaScript/canvasjs.min.js" />
+	<script src="javaScript/jquery.canvasjs.min.js" />
+	<style>
+	.score-text {
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    height: 1em;
+    line-height: 1em;
+    font-size: 1em;
+    color: white;
+  
+}
+	.circle {
+margin-left: auto;
+margin-right: auto;
+border-radius: 50%;
+width: 100%;
+position: relative;
+background-color: #2980b9;
+}
+
+
+.circle-border {
+border: 24px solid #e74c3c;
+}
+
+.circle-solid{
+background-color: whitesmoke;
+}
+
+.circle:before {
+content: "";
+display: block;
+padding-top: 100%;
+}
+
+.circle-inner {
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+text-align: center;
+border-radius: 50%;
+
+
+}
+	</style>
+	
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+
+			$(function() {
+
+				//Better to construct options first and then pass it as a parameter
+				var options = {
+					exportEnabled : true,
+					animationEnabled : true,
+					title : {
+						text : "Exporting Chart as Image"
+					},
+					data : [ {
+						type : "splineArea", //change it to line, area, bar, pie, etc
+						dataPoints : [ {
+							y : 10
+						}, {
+							y : 6
+						}, {
+							y : 14
+						}, {
+							y : 12
+						}, {
+							y : 19
+						}, {
+							y : 14
+						}, {
+							y : 26
+						}, {
+							y : 10
+						}, {
+							y : 22
+						} ]
+					} ]
+				};
+
+				$("#chartContainer").CanvasJSChart(options);
+				 
+			});
+			$('[data-toggle="tooltip"]').tooltip();   
+			
+			$('.btn-toggle').click(function() {
+			    $(this).find('.btn').toggleClass('active');  
+			    
+			    if ($(this).find('.btn-primary').size()>0) {
+			    	$(this).find('.btn').toggleClass('btn-primary');
+			    }
+			    if ($(this).find('.btn-danger').size()>0) {
+			    	$(this).find('.btn').toggleClass('btn-danger');
+			    }
+			    if ($(this).find('.btn-success').size()>0) {
+			    	$(this).find('.btn').toggleClass('btn-success');
+			    }
+			    if ($(this).find('.btn-info').size()>0) {
+			    	$(this).find('.btn').toggleClass('btn-info');
+			    }
+			    
+			    $(this).find('.btn').toggleClass('btn-default');
+			       
+			});
+/* 
+			$('form').submit(function(){
+				alert($(this["options"]).val());
+			    return false;
+			}); */
+			
+		});
+	</script>
+	<style>
+	.badge{
+	background-color:transparent;
+	    color: black;
+	}
+	</style>
+</h:head>
+<h:body>
+
+	<div>
+		<ui:insert name="header">
+			<ui:include src="/template/header.xhtml" />
+		</ui:insert>
+	</div>
+
+	<div>
+		<ui:insert name="content">
+			<ui:include src="/template/content.xhtml" />
+		</ui:insert>
+	</div>
+
+	<div>
+		<ui:insert name="footer">
+			<ui:include src="/template/footer.xhtml" />
+		</ui:insert>
+	</div>
+</h:body>
+</html>

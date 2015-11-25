@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="topmenu.xhtml">
+
+	<ui:define name="content">
+    
+          <div class="container-fluid">
+      <div class="row " >
+             <div class="col-lg-1">
+              
+              <ui:include src="template/sidebar.xhtml"></ui:include>
+            </div>
+            
+          
+         
+            <!--/span-->
+            
+            
+         <div class="col-lg-8">
+			
+ 			
+    			<div class="row">
+  		<div class="col-md-12">     
+			<div class="panel panel-info ">
+   			<div class="panel panel-heading">
+									<h2>Create Detail Training Plan</h2>
+								</div>
+								<div class="panel-body">
+  <ul class="nav nav-tabs" style="background-color: #d9edf7">
+    <li class="active"><a data-toggle="tab" href="#home">Main Heading</a></li>
+    <li><a data-toggle="tab" href="#menu1">SubHeading</a></li>
+   
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+    <div class="panel-body">
+    					<h:form>
+							<table height="150px" width="500px">
+
+								<tr>
+									<td> <label for="username">Course Title</label></td>
+											
+								<td><h:selectOneMenu class="dropdown" value="#{headingBean.course_title}">
+								<f:selectItems value="#{coursesBean.courseTitle}"></f:selectItems>
+								</h:selectOneMenu></td>
+								
+										
+								</tr>
+
+								<tr>
+									<td><label for="username">Heading</label></td>
+									<td><h:inputText  class="form-control" value="#{headingBean.heading_text}" required="true"></h:inputText></td>
+								
+								
+								
+								
+								
+								</tr>
+													
+	
+
+
+								<tr>
+									<td><h:commandButton class="btn btn-info"  value="Save" action="#{headingBean.headingSave}"></h:commandButton></td>
+									<td><h:commandButton class="btn btn-info"  value="Save and Add More"></h:commandButton></td>
+									<td><a href="createdetailcourse.xhtml" class="btn btn-danger">Cancel</a></td>
+								</tr>
+
+							</table>
+						</h:form>			
+    								
+    								
+    								
+    </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div class="panel-body">
+      <h:form>
+							<table height="200px" width="400px">
+
+								<tr>
+									<td><label for="username">Course Title</label></td>
+									<td><h:selectOneMenu class="dropdown" value="#{coursesBean.course_title}">
+								<f:selectItems value="#{coursesBean.courseTitle}"></f:selectItems>
+								</h:selectOneMenu></td>
+								</tr>
+
+								<tr>
+									<td><label for="username">Heading</label></td>
+									<td><h:selectOneMenu class="dropdown" value="#{subheadingBean.heading_text}">
+								<f:selectItems value="#{headingBean.allHeadings}"></f:selectItems>
+								</h:selectOneMenu></td>
+								</tr>
+								
+								<tr>
+									<td><label for="username">Sub Heading</label></td>
+									<td><h:inputText  class="form-control" value="#{subheadingBean.subheadin}"></h:inputText></td>
+								</tr>
+
+
+								<tr>
+									<td><label for="username">Status</label></td>
+									<td><h:selectOneMenu class="dropdown" value="#{subheadingBean.completion_status}">
+											<f:selectItem itemValue="not_started"
+												itemLabel="--Not Started---" />
+											<f:selectItem itemValue="completed"
+												itemLabel="Completed" />
+											<f:selectItem itemValue="pending"
+												itemLabel="Pending" />
+											<f:selectItem itemValue="not_completed"
+												itemLabel="Not Completed" />
+										</h:selectOneMenu></td>
+								</tr>
+
+								<tr>
+									<td><h:commandButton class="btn btn-info"  value="Save" action="#{subheadingBean.saveSubheading}"></h:commandButton></td>
+									<td><h:commandButton class="btn btn-info"  value="Save and Add More"></h:commandButton></td>
+									<td><label for="username"><a href="createdetailcourse.xhtml" class="btn btn-danger">Cancel</a></label></td>
+								</tr>
+
+							</table>
+						</h:form>
+      
+      
+      
+      </div>
+      
+      
+      
+    </div>
+    
+  </div>
+</div>
+    		</div>  	
+    		</div>
+    		</div>		
+  	
+    		
+			
+			</div>
+			
+			<div class="col-lg-3"  >
+			<div class="panel panel-info">
+   			   <div class="panel-heading">Actions</div>
+      			<div class="panel-body">
+      			<center>
+      						<div class="row badge"  style="width:200px;background-color: #d9edf7">
+      							<h:button value="Create a course&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " class="btn " style=" text-align:left;background-color: transparent"  outcome="createcourse.xhtml" ><span class="glyphicon glyphicon-chevron-right " style=" text-align:right;"></span></h:button>
+      								</div>
+      								<br/>
+      								<br/>
+      								<div class="row badge"  style="width:200px;background-color: #d9edf7">
+      							<h:button value="Create a user &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " class="btn " style=" text-align:left;background-color: transparent"  outcome="createcourse.xhtml" ><span class="glyphicon glyphicon-chevron-right " style=" text-align:right;"></span></h:button>
+      								</div>
+      								<br/>
+      								<br/>
+      								<div class="row badge"  style="width:200px;background-color: #d9edf7">
+      							<h:button value="Create a Team&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " class="btn " style=" text-align:left;background-color: transparent"  outcome="createcourse.xhtml" ><span class="glyphicon glyphicon-chevron-right " style=" text-align:right;"></span></h:button>
+      								</div>
+      								<br/>
+      								<br/>
+      			      			
+      			</center>
+      			</div>
+    		</div>  
+			</div>
+			
+			
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>
+</html>

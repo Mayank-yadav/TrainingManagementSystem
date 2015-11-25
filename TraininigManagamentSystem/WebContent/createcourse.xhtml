@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="topmenu.xhtml">
+<ui:define name="content">
+    
+          <div class="container-fluid">
+      <div class="row " >
+             <div class="col-lg-1">
+              
+              <ui:include src="template/sidebar.xhtml"></ui:include>
+            </div>
+            
+          
+         
+            <!--/span-->
+
+
+				<div class="col-lg-8">
+
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-info ">
+								<div class="panel panel-heading">
+									<h2>Create a New Course</h2>
+								</div>
+								<div class="panel-body">
+									<h:form>
+						<table >
+
+							<tr>
+								<td><label for="username">Course Title</label></td>
+								<td><h:inputText value="#{coursesBean.course_title}"  class="form-control"></h:inputText></td>
+							
+							
+							
+							</tr>
+
+
+
+
+							<tr>
+								<td><label for="username">Description</label></td>
+								<td><h:inputTextarea value="#{coursesBean.description}"  class="form-control"></h:inputTextarea>
+								</td>
+							</tr>
+							
+							<tr>
+								<td><label for="username">Reference Code</label></td>
+								<td><h:inputText size="100" value="#{coursesBean.reference_code}"  class="form-control"></h:inputText></td>
+							</tr>
+
+							<tr>
+								<td><label for="username">Active</label></td>
+								<td><h:selectBooleanCheckbox value="#{coursesBean.status}"
+										id="chkRememberMe" /></td>
+							</tr>
+
+
+						</table>
+						<br />
+						<label for="username">Course image (Optional)</label>
+	
+	<hr></hr>
+
+						<table>
+							<tr>
+								<td><h5>
+										<b>Upload an image</b>
+									</h5></td>
+								<td><input type="file" value="Choose file"  /></td>
+							</tr>
+
+						</table>
+
+						<hr></hr>
+						
+						<h:commandButton class="btn btn-info" action="#{coursesBean.save}" value="Save"></h:commandButton> or <a href="createcourse.xhtml"  class="btn btn-danger">Cancel</a>
+
+					</h:form>
+								
+								
+								
+								
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				
+					
+
+				</div>
+
+				<div class="col-lg-3">
+				<div class="row">
+					<div class="panel panel-info">
+						<div class="panel-heading">Notification</div>
+						<div class="panel-body">
+							By default this course will be added as active course. Later you can edit the course if requried.
+						</div>
+					</div>
+					</div>
+					
+					<div class="row">
+					<div class="panel panel-info">
+						<div class="panel-heading">Course Details</div>
+						<div class="panel-body">
+						<center>
+						<div class="row badge"  style="width:200px;background-color: #d9edf7">
+      							<h:button value="Course Detail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " class="btn " style=" text-align:left;background-color: transparent"  outcome="createdetailcourse.xhtml" ><span class="glyphicon glyphicon-chevron-right " style=" text-align:right;"></span></h:button>
+      								</div>
+      								</center>
+						</div>
+						
+					</div>
+					
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>
+
+</html>

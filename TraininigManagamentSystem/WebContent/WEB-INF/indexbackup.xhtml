@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Training Management System</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+body{
+  background-image:url("http://www.studytonight.com/css/resource.v2/pictures/st_code_back.jpg") ;
+}
+</style>
+
+
+
+
+</h:head>
+
+<h:body>
+
+<center>
+<h1>Login Form</h1>
+
+ 
+
+ <h:form>
+<table style=" opacity:0.93; width:100px;height:100px; " class="table table-bordered">
+<h:outputText value="#{param['err']}" style="color:red"/>
+ 
+	<tr>
+		<td>User name:</td>
+		<td><h:inputText id="username" value="#{userBean.userName}" requiredMessage="Kindly provide username" required="true" />
+        <h:message for="username" style="color:red"></h:message></td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td><h:inputSecret id="password" value="#{userBean.password}" required="true" requiredMessage="Kindly provide password"></h:inputSecret> <p id="msg">
+       <h:message for="password" style="color:red"></h:message></p></td>
+	</tr>
+	<tr>
+		<td><h:outputLink class="btn btn-info" value="registration.xhtml" >Registration</h:outputLink></td>
+		<td><h:commandButton class="btn btn-success" value="Login" action="#{userBean.LoginAction}"></h:commandButton></td>
+	</tr>
+</table>
+</h:form>
+</center>
+</h:body>
+</html>

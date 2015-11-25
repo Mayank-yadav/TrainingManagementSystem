@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="topmenu.xhtml">
+<ui:define name="content">
+    
+          <div class="container-fluid">
+      <div class="row " >
+             <div class="col-lg-1">
+              
+              <ui:include src="template/sidebar.xhtml"></ui:include>
+            </div>
+            
+          
+         
+            <!--/span-->
+
+
+				<div class="col-lg-8">
+
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-info ">
+								<div class="panel panel-heading">
+									<h2>All Courses</h2>
+								</div>
+								<div class="panel-body">
+							
+						
+					
+				
+						
+						
+							<ui:repeat var="list" value="#{coursesBean.courseDetailsList}">
+						
+						
+						<table class="table table-bordered table-striped table-hover">
+								<tr class="info">
+									<td  colspan="3" align="center"><h3 >Course Title:#{list.courseTitle}</h3></td>
+								</tr>
+								<tr class="success">
+								
+								<td><h4>Heading</h4></td>
+								<td><h4>Subheading</h4></td>
+								<td><h4>Status</h4></td>
+							</tr>
+								
+							<h:form>
+							
+							
+									
+								
+								
+							<ui:repeat var="lists" value="#{list.headingList}">
+								<tr>
+							<td>
+									#{lists.heading_text}
+								</td>
+								
+							<td>
+						<ui:repeat var="listsub" value="#{lists.subheading}">
+									#{listsub.subheadin}
+									<br/>
+									
+							</ui:repeat>
+									</td>
+						
+							
+							<td>
+						<ui:repeat var="listsub" value="#{lists.subheading}">
+							#{listsub.completion_status}									
+									<br/>
+							</ui:repeat>
+									</td>
+						
+						
+							</tr>
+							</ui:repeat>
+						
+								
+								
+								
+								
+							</h:form>
+							
+
+						</table>
+							</ui:repeat>
+						
+			
+								
+								
+								
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				
+					
+
+				</div>
+
+				<div class="col-lg-3">
+				<div class="row">
+					<div class="panel panel-info">
+						<div class="panel-heading">Notification</div>
+						<div class="panel-body">
+							By default this course will be added as active course. Later you can edit the course if requried.
+						</div>
+					</div>
+					</div>
+					
+					<div class="row">
+					<div class="panel panel-info">
+						<div class="panel-heading">Course Details</div>
+						<div class="panel-body">
+						<center>
+						<div class="row badge"  style="width:200px;background-color: #d9edf7">
+      							<h:button value="Course Detail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " class="btn " style=" text-align:left;background-color: transparent"  outcome="createdetailcourse.xhtml" ><span class="glyphicon glyphicon-chevron-right " style=" text-align:right;"></span></h:button>
+      								</div>
+      								</center>
+						</div>
+						
+					</div>
+					
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>
+
+</html>

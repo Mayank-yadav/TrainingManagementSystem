@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="topmenu.xhtml">
+
+	<ui:define name="content">
+    
+          <div class="container-fluid">
+      <div class="row " >
+             <div class="col-lg-1">
+              
+              <ui:include src="template/sidebar.xhtml"></ui:include>
+            </div>
+            
+          
+         
+            <!--/span-->
+            
+            
+         <div class="col-lg-8">
+			
+ 			
+    			<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-info ">
+								<div class="panel panel-heading">
+									<h2>All Courses Created</h2>
+								</div>
+								<div class="panel-body">
+									<h:form>
+						<div class="row">
+					
+  <table class="table table-bordered" >
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>Ref_no.</th>
+        <th>Title</th>
+        <th colspan="3">Action</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Anna</td>
+        <td>Title</td>
+        <td><div class="btn-group btn-toggle"> 
+    	<button class="btn btn-xs btn-default">Active</button>
+    	<button class="btn btn-xs btn-success active">Deactive</button>
+    	</div>
+    	</td>
+    	
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Debbie</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>John</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+					
+	
+
+						
+						
+						
+
+					</h:form>
+								
+								
+								
+								
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+  		
+    		
+			
+			</div>
+			
+			<div class="col-lg-3"  >
+			<div class="panel panel-info">
+   			   <div class="panel-heading">Actions</div>
+      			<div class="panel-body">
+      			<center>
+      						<div class="row badge"  style="width:200px;background-color: #e3e3e3">
+      							<h:button value="Create a course&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " class="btn " style=" text-align:left;background-color: transparent"  outcome="createcourse.xhtml" ><span class="glyphicon glyphicon-chevron-right " style=" text-align:right;"></span></h:button>
+      								</div>
+      								<br/>
+      								<br/>
+      								<div class="row badge"  style="width:200px;background-color: #e3e3e3">
+      							<h:button value="Create a user &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " class="btn " style=" text-align:left;background-color: transparent"  outcome="createcourse.xhtml" ><span class="glyphicon glyphicon-chevron-right " style=" text-align:right;"></span></h:button>
+      								</div>
+      								<br/>
+      								<br/>
+      								<div class="row badge"  style="width:200px;background-color: #e3e3e3">
+      							<h:button value="Create a Team&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " class="btn " style=" text-align:left;background-color: transparent"  outcome="createcourse.xhtml" ><span class="glyphicon glyphicon-chevron-right " style=" text-align:right;"></span></h:button>
+      								</div>
+      								<br/>
+      								<br/>
+      			      			
+      			</center>
+      			</div>
+    		</div>  
+			</div>
+			
+			
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>
+</html>
