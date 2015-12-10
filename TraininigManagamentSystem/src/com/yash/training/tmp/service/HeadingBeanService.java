@@ -39,10 +39,10 @@ public class HeadingBeanService implements HeadingBeanServiceLocal {
 	}
 
 	@Override
-	public List<String> getHeadings(int course_id) throws SQLException {
+	public List<String> getHeadings() throws SQLException {
 		// TODO Auto-generated method stub
 		
-		String query="Select * from heading where course_id="+course_id;
+		String query="Select * from heading ";
 		System.out.println(query);
 		ResultSet result=DBUtil.select(query);
 		List<String> list=new ArrayList<>();

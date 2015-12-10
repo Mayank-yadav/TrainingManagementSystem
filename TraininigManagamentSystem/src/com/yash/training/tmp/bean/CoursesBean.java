@@ -3,7 +3,6 @@ package com.yash.training.tmp.bean;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -57,7 +56,9 @@ public class CoursesBean {
 	private List<String> coursetitles;
 
 	public List<Courses> getCourseList() {
-	
+		
+		
+		
 		return courseList;
 	}
 
@@ -66,7 +67,7 @@ public class CoursesBean {
 	}
 
 	public List<DetailsPrint> getCourseDetailsList() {
-		courseDetailsList = coursesbeanservice.getCoursesDetailsService(course_id);
+		
 		
 		return courseDetailsList;
 	}
@@ -150,7 +151,7 @@ public class CoursesBean {
 		courses.setUpload(upload);
 		System.out.println("" + courses.getStatus());
 		coursesbeanservice.saveCourses(courses);
-		return "createcourse.xhtml?faces-redirect=true";
+		return "createcourse.xhtml";
 	}
 
 	public List<String> getCourseTitle() {
@@ -185,13 +186,6 @@ public class CoursesBean {
 		return "details";
 
 	}
-	
-	
-	public String displaytrainerDetails(){
-		courseDetailsList = coursesbeanservice.getCoursesDetailsService(course_id);
-		System.out.println("inside displaytrainerDetails");
-		return "trainercoursedetail";
-	}
 
 	public String printCourses() {
 
@@ -199,16 +193,6 @@ public class CoursesBean {
 
 		return "course";
 	}
-	
-	@PostConstruct
-	public void  printActiveCourses(){
-		System.out.println("------printActiveCourses called------------");
-		 courseList = coursesbeanservice.getAllCoursesService();
-
-	}
-	
-	
-	
 	
 	public void changeStatusMethod(){
 		System.out.println(selectedCourse_id+"------changeStatusmethod()------------");
@@ -221,13 +205,9 @@ public class CoursesBean {
 	public String deleteCourse(){
 		System.out.println("--------Delete Courses---------:"+selectedCourse_id);
 		coursesbeanservice.deleteCourse(selectedCourse_id);
-		printCourses();
-
+		
 		return "course.xhtml";
 	}
-	
-	
-	
 	
 
 }

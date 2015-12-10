@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.faces.context.FacesContext;
 
 import com.yash.training.tmp.domain.Courses;
 import com.yash.training.tmp.domain.DetailsPrint;
@@ -33,15 +32,12 @@ public class CoursesBeanService implements CoursesBeanServiceLocal {
 	@Override
 	public String saveCourses(Courses courses) {
 		System.out.println("inside savecourses");
-		User user = (User) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("loggedinuser");
-
-		String query="Insert into courses (course_title,description,reference_code,image,status_id,user_id) values ("
+		String query="Insert into courses (course_title,description,reference_code,image,status_id) values ("
 				+ "'"+courses.getCourse_title()
 				+ "','"+courses.getDescription()
 				+ "','"+courses.getReference_code()
 				+ "','image"
 				+ "','"+courses.getStatus()
-				+ "','"+user.getUser_id()
 				+ "')";
 		System.out.println(query);
 		DBUtil.update(query);
@@ -121,7 +117,8 @@ public class CoursesBeanService implements CoursesBeanServiceLocal {
 		System.out.println(query1);
 		
 		List<DetailsPrint> detailsOfCourses = new ArrayList<>();
-		
+		List<Heading> headings=new ArrayList<>();
+		List<Subheading> subheadings=new ArrayList<>();
 		
 		
 		  try {
@@ -146,19 +143,16 @@ public class CoursesBeanService implements CoursesBeanServiceLocal {
 	            }
 	            System.out.println("------Start while-------");
 	            while(resultSet1.next()){
-	            	List<Heading> headings=new ArrayList<>();
-	        		
 	            	System.out.println("------------inside details----------------");
 	            	DetailsPrint detailsPrint1=new DetailsPrint();
 	            	detailsPrint1.setCourseTitle(resultSet1.getString("COURSE_TITLE"));
 	            	detailsPrint1.setReferenceCode(resultSet1.getString("REFERENCE_CODE"));
 	            	while(resultSet2.next()){
-            			List<Subheading> subheadings=new ArrayList<>();
-
+	            		
 	            		Heading heading=new Heading();
 	            		heading.setHeading_text(resultSet2.getString("heading_text"));
 	            		heading.setHeading_id((resultSet2.getInt("heading_id")));
-	            		System.out.println("Inside heading:"+heading.getHeading_id());
+	            		System.out.println("inside heading"+heading.getHeading_id());
 	            		String query3="Select * from subheading where heading_id='"+heading.getHeading_id()+"'";
 	            		ResultSet resultSet3 = DBUtil.select(query3);
 	            		while(resultSet3.next()){
@@ -167,25 +161,20 @@ public class CoursesBeanService implements CoursesBeanServiceLocal {
 	            			subheading.setSubheading_id(resultSet3.getInt("subheading_id"));
 	            			subheading.setCompletion_status(resultSet3.getString("completion_status"));
 	            			subheadings.add(subheading);
-	            		
+	            			System.out.println("subheading"+subheading);
 	            			System.out.println("subheadings"+subheadings);
-	            			System.out.println("------------Subheading Added-------------");
-	            			System.out.println("subheading:"+subheading.getSubheadin());
-	            			System.out.println("------------Loopend-------------");
-
-		            	  	
 	            		}
 	            		
-	            		heading.setSubheading(subheadings);           		
+	            		heading.setSubheading(subheadings);
 	            		headings.add(heading);
-	            		System.out.println("heading"+heading.getHeading_text());
+	            		System.out.println("heading"+heading);
             			System.out.println("headings"+headings);
             			
 	            	}	            	
 	            	
-	          
 	            	detailsPrint1.setHeadingList(headings);
 	            	detailsOfCourses.add(detailsPrint1);
+	            		
 	            	
 	            	
 	            }
@@ -236,9 +225,7 @@ public class CoursesBeanService implements CoursesBeanServiceLocal {
 
 	@Override
 	public int getTotalActiveCourses() {
-
-		String query="";
-		
+		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -249,9 +236,6 @@ public class CoursesBeanService implements CoursesBeanServiceLocal {
 		DBUtil.update(query);
 		System.out.println("-----------courses deleted successfully---------------");
 	}
-
-	
-
 	
 
 	

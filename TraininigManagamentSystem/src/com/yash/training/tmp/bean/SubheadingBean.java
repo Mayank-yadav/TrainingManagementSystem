@@ -17,32 +17,7 @@ public class SubheadingBean {
 	String heading_text;
 	int heading_id;
 	String subheadin;
-	String completion_status="--Not Started---";
-	
-	
-	
-	
-	
-	
-	
-
-	int subheading_id;
-
-	public int getSubheading_id() {
-		return subheading_id;
-	}
-
-	public void setSubheading_id(int subheading_id) {
-		this.subheading_id = subheading_id;
-	}
-
-	public SubheadingBeanService getSubheadingService() {
-		return subheadingService;
-	}
-
-	public void setSubheadingService(SubheadingBeanService subheadingService) {
-		this.subheadingService = subheadingService;
-	}
+	String completion_status;
 
 	@EJB
 	SubheadingBeanService subheadingService;
@@ -99,12 +74,7 @@ public class SubheadingBean {
 		return "createdetailcourse";
 	}
 	
-	public String updateCourse(){
-		System.out.println("--------UpdateCourse-----------");
-		subheadingService.changeCourseStatus(completion_status, subheading_id);
-		
-		return "trainercoursedetail";
-	}
+	
 	
 	
 	

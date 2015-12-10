@@ -11,6 +11,8 @@ import javax.faces.bean.SessionScoped;
 import com.yash.training.tmp.domain.Subheading;
 import com.yash.training.tmp.service.SubheadingBeanService;
 
+@ManagedBean
+@SessionScoped
 public class Subheading implements Serializable{
 
 	/**

@@ -38,65 +38,60 @@
 						
 						
 							<ui:repeat var="list" value="#{coursesBean.courseDetailsList}">
-						<h:form>
-												Course Title:#{list.courseTitle}
-						
 						
 						
 						<table class="table table-bordered table-striped table-hover">
-								<ui:repeat var="lists" value="#{list.headingList}">
-						
 								<tr class="info">
-									<td  colspan="2" align="center"><h3 >Heading:#{lists.heading_text}</h3></td>
+									<td  colspan="3" align="center"><h3 >Course Title:#{list.courseTitle}</h3></td>
 								</tr>
-							
 								<tr class="success">
 								
-								
+								<td><h4>Heading</h4></td>
 								<td><h4>Subheading</h4></td>
 								<td><h4>Status</h4></td>
 							</tr>
 								
-							
+							<h:form>
 							
 							
 									
 								
-									<ui:repeat var="listsub" value="#{lists.subheading}">
 								
+							<ui:repeat var="lists" value="#{list.headingList}">
 								<tr>
-							
+							<td>
+									#{lists.heading_text}
+								</td>
 								
 							<td>
-						
+						<ui:repeat var="listsub" value="#{lists.subheading}">
 									#{listsub.subheadin}
 									<br/>
 									
-							
+							</ui:repeat>
 									</td>
 						
 							
 							<td>
-						
+						<ui:repeat var="listsub" value="#{lists.subheading}">
 							#{listsub.completion_status}									
 									<br/>
-						
+							</ui:repeat>
 									</td>
 						
 						
 							</tr>
+							</ui:repeat>
 						
 								
 								
 								
+								
+							</h:form>
 							
-							</ui:repeat>
-							</ui:repeat>
+
 						</table>
-										
-						
-								
-							</h:form></ui:repeat>
+							</ui:repeat>
 						
 			
 								

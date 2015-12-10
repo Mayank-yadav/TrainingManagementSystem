@@ -106,7 +106,7 @@ public class UserBean {
 	}
 	
 	
-	public String loginAction() throws Exception{
+	public String LoginAction() throws Exception{
 		System.out.println("inside login");
 		User users=new User();
 		users.setUsername(userName);
@@ -124,19 +124,16 @@ public class UserBean {
 			 setName(user.getUser_name());
 				int d_id = user.getDesination_id();
 				if (d_id == 1) {
-					
 					populateList.add(managerMenu.getAddTrainingPlan());
 					populateList.add(managerMenu.getRemoveTrainer());
 					populateList.add(managerMenu.getTestResult());
 					populateList.add(managerMenu.getSeeAllTrainers());
 
 					System.out.println("this is manager");
-					return "topmenu.xhtml";
-
 				}
 
 				if (d_id == 2) {
-					System.out.println("inside trainer");
+
 					populateList.add(trainerMenu.getSetPoc());
 					populateList.add(trainerMenu.getPerfomanceSheet());
 					populateList.add(trainerMenu.getSeeAllTrainees());
@@ -146,8 +143,6 @@ public class UserBean {
 						System.out.println("--------------" + mList + "----------------------");
 
 					System.out.println("this is trainer");
-					return "trainerpage.xhtml";
-
 				}
 				if (d_id == 3) {
 
@@ -160,8 +155,6 @@ public class UserBean {
 						System.out.println("--------------" + mList + "----------------------");
 
 					System.out.println("this is trainee");
-					return "trainee.xhtml";
-
 				}
 
 			
@@ -189,7 +182,7 @@ public class UserBean {
 		user.setPassword(password);
 		user.setUser_email_id(email);
 		user.setUser_contact(contact);
-		
+	
 		userbeanservice.registerUser(user, designation);
 		return "index.xhtml";
 		

@@ -83,10 +83,8 @@ public class HeadingBean {
 	public List<String> getAllHeadings(){
 		System.out.println("inside getheadings()");
 		try {
-			 User user=(User) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("loggedinuser");
-		       System.out.println(course_title);
-		        course_id=headingService.getCourseid(user,course_title);
-			headings=headingService.getHeadings(course_id);
+			
+			headings=headingService.getHeadings();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

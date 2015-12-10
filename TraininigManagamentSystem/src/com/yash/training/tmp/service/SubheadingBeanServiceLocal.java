@@ -11,7 +11,5 @@ public interface SubheadingBeanServiceLocal {
 	public int getHeadingid(User user,String heading_text);
 	public void saveSubheadingService(Subheading subheading);
 	
-	public void changeCourseStatus(String completion_status,int subheading_id);
-
 	
 }
