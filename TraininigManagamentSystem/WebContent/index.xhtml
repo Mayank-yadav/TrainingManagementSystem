@@ -10,9 +10,9 @@ xmlns:f="http://java.sun.com/jsf/core">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"></link>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="javaScript/loginquery.js"></script>
 <style>body{ 
-background-image:url("http://www.studytonight.com/css/resource.v2/pictures/st_code_back.jpg") }</style>
-<style>
+background-image:url("http://www.studytonight.com/css/resource.v2/pictures/st_code_back.jpg") }
 	#background {
     position: fixed;
     top: 50%;
@@ -293,6 +293,7 @@ a.ex5:hover, a.ex5:active {text-decoration: none;}
             	
             	  <label for="username">Username</label>
                 <h:inputText type="email" id="userName"  value="#{userBean.userName}" requiredMessage="Kindly provide username" class="form-control"   required="true" />
+				<h:message for="userName" style="color:red" ></h:message>
                   
 				<span id="user"></span>
 				
@@ -306,7 +307,7 @@ a.ex5:hover, a.ex5:active {text-decoration: none;}
                         <h:selectBooleanCheckbox type="checkbox" value="remember-me">remember me</h:selectBooleanCheckbox> 
                     </label>
                 </div>
-                <h:commandButton class="btn btn-lg btn-primary btn-block btn-signin" value="Login" action="#{userBean.LoginAction}"></h:commandButton>
+                <h:commandButton class="btn btn-lg btn-primary btn-block btn-signin" value="Login" action="#{userBean.loginAction}"></h:commandButton>
            
             <a href="#" class="forgot-password">
                 Forgot the password?
@@ -377,6 +378,6 @@ a.ex5:hover, a.ex5:active {text-decoration: none;}
 
 </h:body>
   <footer  class="footer navbar-fixed-bottom" style="text-align:center;">
-        <p style="color:white;">© Yash Technoloogies 2015</p>
+        <p style="color:white;">© Yash Technologies 2015</p>
       </footer>
 </html>

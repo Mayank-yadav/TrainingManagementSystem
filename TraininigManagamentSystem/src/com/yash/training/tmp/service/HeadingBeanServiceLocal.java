@@ -12,7 +12,7 @@ import com.yash.training.tmp.domain.User;
 @Local
 public interface HeadingBeanServiceLocal {
 	public void saveHeadingService(Heading heading);
-	public List<String> getHeadings( ) throws SQLException;
+	public List<String> getHeadings(int course_id ) throws SQLException;
 	public int getCourseid(User user,String course_title);
 	
 }
