@@ -51,5 +51,16 @@ public class SubheadingBeanService implements SubheadingBeanServiceLocal {
 		return heading_id;
 	}
 
+	
+	@Override
+	public void changeCourseStatus(String completion_status,int subheading_id) {
+		// TODO Auto-generated method stub
+		System.out.println("------------changeCourseStatus:--------------"+completion_status);
+		String query="Update subheading SET completion_status='"+completion_status+ "' where subheading_id='"+subheading_id+"'";
+		DBUtil.update(query);
+		System.out.println("------------course completion status updated------------------");
+	
+	
+	}
 }
 
